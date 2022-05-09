@@ -1,3 +1,87 @@
-.hello {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: lighter;
+}
+
+#container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  height: 60vh;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+
+#today {
+  background-color: bisque;
+  margin: 0;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius:0 0 15px 15px;
+}
+
+#title {
+  text-align: right;
+}
+
+#info {
+  display: flex;
+  gap: 20px;
+}
+
+#weather-now {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-more {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-more-img {
+  height: 90px;
+  width: 90px;
+}
+
+#future {
+  height: 40vh;
+  background-color: blueviolet;
 }

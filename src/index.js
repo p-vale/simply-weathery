@@ -1,13 +1,14 @@
-import './style.css';
+import './style.css'
+import main from './main'
+import future from './future'
 
- function component() {
-  const element = document.createElement('div');
+function component () {
+  const container = document.createElement('div')
+  container.id = 'container'
+  container.appendChild(main())
+  container.appendChild(future())
 
-   
-  element.innerHTML = 'Hello webpack';
-  element.classList.add('hello');
+  return container
+}
 
-  return element;
- }
-
- document.body.appendChild(component());
+ document.body.appendChild(component())
