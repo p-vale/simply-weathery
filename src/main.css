@@ -1,0 +1,47 @@
+#main {
+  height: 60vh;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+
+#today {
+  background-color: bisque;
+  margin: 0;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius:0 0 15px 15px;
+}
+
+#title {
+  text-align: right;
+}
+
+#info {
+  display: flex;
+  gap: 20px;
+}
+
+#weather-now {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-more {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-more-img {
+  height: 90px;
+  width: 90px;
+}

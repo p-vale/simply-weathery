@@ -1,12 +1,12 @@
 import './style.css'
-import main from './main'
-import future from './future'
+import main from './main.js'
+import forecast from './forecast.js'
 
 function component () {
   const container = document.createElement('div')
   container.id = 'container'
   container.appendChild(main())
-  container.appendChild(future())
+  container.appendChild(forecast())
 
   return container
 }

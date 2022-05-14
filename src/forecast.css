@@ -1,0 +1,8 @@
+#forecast {
+  height: 40vh;
+  background-color: blueviolet;
+}
+
+#title {
+  text-transform: uppercase;
+}
