@@ -1,7 +1,13 @@
 import './main.css'
 import mainInfo from './main-info'
+import search from './search'
 
-function main () { //weather call params
+function main (data) {
+  // does not wait promise
+  // rething components structure and interactions
+  const todayData = search()
+  console.log(todayData.temp)
+
   const main = document.createElement('div')
   main.id = 'main'
 
@@ -13,7 +19,7 @@ function main () { //weather call params
   let date = document.createElement('h1')
   date.innerHTML = '22 march 2022'
   let dayTime = document.createElement('h3')
-  dayTime.innerHTML = 'Saturday 07:00'
+  dayTime.innerHTML = `${todayData.name}, Saturday 07:00`
   title.appendChild(date)
   title.appendChild(dayTime)
 
