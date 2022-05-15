@@ -4,7 +4,7 @@ function forecastCards () {
   const cardBox = document.createElement('div')
   cardBox.id = 'card-box'
 
-  let cards = ext.map((item) => {
+  ext.map((item) => {
     let card = document.createElement('div')
     card.classList.add('card')
     let date = document.createElement('h3')

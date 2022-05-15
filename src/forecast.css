@@ -1,8 +1,50 @@
 #forecast {
-  height: 40vh;
   background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
-#title {
+#forecast-title {
   text-transform: uppercase;
+}
+
+.cards-title {
+  background-color: aquamarine;
+  text-align: center;
+  align-self: flex-start;
+  display: flex;
+  gap: 10px;
+}
+
+#card-box {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  background-color: brown;
+  overflow-x: auto; /* top scrollbar  */
+  overflow-y: hidden; /* top scrollbar  */
+  white-space: nowrap; /* top scrollbar  */
+  transform: rotateX(180deg); /* top scrollbar  */
+}
+
+.card {
+  transform: rotateX(180deg); /* top scrollbar  */
+  height: 30vh;
+  width: 300px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.card-temp {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
