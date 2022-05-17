@@ -1,7 +1,7 @@
 import './forecast.css'
 import forecastCards from './forecast-cards'
 
-function forecast () {
+function forecast (data) {
   const forecast = document.createElement('div')
   forecast.id = 'forecast'
 
