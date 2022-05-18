@@ -1,14 +1,14 @@
 #main {
   height: 60vh;
-  background-color: aqua;
   display: flex;
   justify-content: center;
 }
 
 #today {
-  background-color: bisque;
+  background-color: rgb(46, 23, 79, .4);
   margin: 0;
   width: 50vw;
+  min-width: 500px;
   height: 50vh;
   display: flex;
   flex-direction: column;

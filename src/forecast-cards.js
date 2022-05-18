@@ -3,11 +3,13 @@ function forecastCards (data) {
 
   const cardBox = document.createElement('div')
   cardBox.id = 'card-box'
+  cardBox.classList.add('rotate')
 
   dataList.map((item) => {
     let card = document.createElement('div')
-    card.classList.add('card')
+    card.classList.add('card', 'rotate')
     let date = document.createElement('h3')
+    date.classList.add('card-date')
     date.innerHTML = item.dt
 
     let img = document.createElement('img')

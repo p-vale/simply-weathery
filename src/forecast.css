@@ -1,5 +1,4 @@
 #forecast {
-  background-color: blueviolet;
   display: flex;
   align-items: end;
   padding-left: 20px;
@@ -11,11 +10,40 @@
   text-transform: uppercase;
 }
 
-.cards-title {
-  background-color: aquamarine;
+#card-box {
+  height: 310px;
   display: flex;
-  height: 30vh;
-  width: 250px;
+  align-items: start;
+  gap: 20px;
+  overflow-x: auto; /* top scrollbar  */
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: rgb(223, 223, 223, 0.4); */
+  box-shadow: inset 1px 1px 5px rgba(255, 255, 255);
+  border-radius: 10px;
+  /* background-clip: content-box;
+  border: 5px solid transparent; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.card {
+  height: 250px;
+  width: 175px;
+  flex-shrink: 0;
+  background-color: rgb(46, 23, 79, .4);
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -25,28 +53,8 @@
   justify-content: center;
 }
 
-#card-box {
-  width: 100%;
-  display: flex;
-  gap: 20px;
-  background-color: brown;
-  overflow-x: auto; /* top scrollbar  */
-  overflow-y: hidden; /* top scrollbar  */
-  white-space: nowrap; /* top scrollbar  */
+.rotate {
   transform: rotateX(180deg); /* top scrollbar  */
-}
-
-.card {
-  transform: rotateX(180deg); /* top scrollbar  */
-  height: 30vh;
-  width: 300px;
-  background-color: aquamarine;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
 }
 
 .card-temp {

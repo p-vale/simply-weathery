@@ -13,7 +13,7 @@ function forecast (data) {
   // after.innerHTML = '->'
 
   const titleCard = document.createElement('div')
-  titleCard.classList.add('cards-title')
+  titleCard.classList.add('card')
   // titleCard.appendChild(before)
   titleCard.appendChild(title)
   // titleCard.appendChild(after)

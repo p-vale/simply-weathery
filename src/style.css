@@ -11,6 +11,7 @@ html::-webkit-scrollbar {
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  color: white;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -33,4 +34,5 @@ h3 {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-color: rgb(193, 255, 255);
 }
