@@ -1,10 +1,10 @@
 #forecast {
   background-color: blueviolet;
   display: flex;
-  flex-direction: column;
   align-items: end;
   padding-left: 20px;
   padding-bottom: 20px;
+  gap : 15px;
 }
 
 #forecast-title {
@@ -13,10 +13,16 @@
 
 .cards-title {
   background-color: aquamarine;
-  text-align: center;
-  align-self: flex-start;
   display: flex;
-  gap: 10px;
+  height: 30vh;
+  width: 250px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 #card-box {

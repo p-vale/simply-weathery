@@ -16,10 +16,12 @@ html {
 
 h1 {
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  text-align: center;
 }
 
 h3 {
