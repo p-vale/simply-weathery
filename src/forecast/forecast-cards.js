@@ -1,3 +1,5 @@
+import { imageManager } from '../support-func'
+
 function forecastCards (data) {
   const cardBox = document.createElement('div')
   cardBox.id = 'card-box'
@@ -5,23 +7,26 @@ function forecastCards (data) {
 
   data.map((item) => {
     let card = document.createElement('div')
-    card.classList.add('card', 'rotate')
+    card.classList.add('card', 'rotate', 'hour-color')
     let date = document.createElement('h3')
-    date.classList.add('upper')
+    date.classList.add('upper', 'big')
     date.innerHTML = item.dt
 
     let img = document.createElement('img')
-    img.src = 'http://placekitten.com/150/150'
+    img.classList.add('card-img')
+    img.src = imageManager(item.main)
     let weather = document.createElement('p')
+    // weather.classList.add('upper')
     weather.innerHTML = item.fore
 
     let temp = document.createElement('div')
     temp.classList.add('card-temp')
-    let min =  document.createElement('p')
-    min.innerHTML = item.min
-    let max =  document.createElement('p')
-    max.classList.add('bold')
-    max.innerHTML = item.max
+    let min = document.createElement('p')
+    min.innerHTML = `${item.min}°`
+    min.classList.add('big')
+    let max = document.createElement('p')
+    max.classList.add('bold', 'big')
+    max.innerHTML = `${item.max}°`
     temp.appendChild(min)
     temp.appendChild(max)
 

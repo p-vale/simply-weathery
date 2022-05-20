@@ -5,7 +5,6 @@
 }
 
 #today {
-  background-color: rgb(46, 23, 79, .4);
   margin: 0;
   width: 50vw;
   min-width: 500px;
@@ -19,18 +18,22 @@
 }
 
 #title {
-  text-align: right;
+  margin-bottom: 30px;
+}
+
+#title-day-time {
+  font-weight: 300;
 }
 
 #info {
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
 #weather-now {
+  max-width: 200px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -39,10 +42,12 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px;;
 }
 
 .weather-more-img {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
 }

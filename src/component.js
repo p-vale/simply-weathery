@@ -1,6 +1,6 @@
 import main from './main/main.js'
 import forecast from './forecast/forecast.js'
-import { makeData, makeDataList } from './support-func'
+import { makeData, makeDataList, styler } from './support-func'
 
 function component (id) {
   const container = document.createElement('div')
@@ -13,6 +13,7 @@ function component (id) {
     let x = JSON.parse(JSON.stringify(response))
     let data = makeData(x)
 
+    styler(data.dt)
     container.appendChild(main(data))
   })
   })

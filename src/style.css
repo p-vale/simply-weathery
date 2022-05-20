@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,16 +14,17 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
   color: white;
-  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 0.1em;
 }
 
-h2 {
-  font-weight: 200;
+h1 {
+  font-weight: 600;
+  font-size: 2em;
 }
 
-h3 {
-  font-weight: lighter;
+h2 {
+  font-weight: 400;
 }
 
 .big {
@@ -42,5 +45,4 @@ h3 {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: rgb(193, 255, 255);
 }

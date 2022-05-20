@@ -3,7 +3,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 
 function makeData (x) {
   let data = {}
-  data.weather = x.weather[0].main
+  data.main = x.weather[0].main.toLowerCase()
   data.descr = x.weather[0].description
   data.temp = (x.main.temp - 273.15).toFixed(2)
   data.humi = x.main.humidity
@@ -17,7 +17,7 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 
-function cleanDataList (j) {
+function cleanDataList (j) { //function for makeDataList() - see below
   let dataList = []
   let date = ''
   let item = {}
@@ -32,7 +32,8 @@ function cleanDataList (j) {
         'dt' : `${currDate.slice(8, 10)} ${months[parseInt(currDate.slice(5, 7)-1)]}`,
         'min' : curr.temp,
         'max' : curr.temp,
-        'fore' : curr.fore
+        'fore' : curr.fore,
+        'main' : curr.main.toLowerCase()
       }
       date = currDate
     } else {
@@ -41,7 +42,8 @@ function cleanDataList (j) {
         'dt' : `${currDate.slice(8, 10)} ${months[parseInt(currDate.slice(5, 7)-1)]}`,
         'min' : curr.temp,
         'max' : curr.temp,
-        'fore' : curr.fore
+        'fore' : curr.fore,
+        'main' : curr.main.toLowerCase()
       }
       date = currDate
     }
@@ -55,7 +57,8 @@ function makeDataList (y) {
     let item = {
       'dt' : y[i].dt_txt,
       'temp' : Math.round(y[i].main.temp - 273.15),
-      'fore' : y[i].weather[0].description
+      'fore' : y[i].weather[0].description,
+      'main' : y[i].weather[0].main
     }
     arr.push(item)
   }
@@ -83,9 +86,78 @@ function unixToDateTime (unix) {
   return hours + ':' + minutes.slice(-2)
 }
 
+function unixToHours (unix) {
+  let date = new Date(unix * 1000)
+  return date.getHours()
+}
+
+import sun from './img/icons/clear sky.webp'
+import broken from './img/icons/broken clouds.webp'
+import rain from './img/icons/rain.webp'
+import thunderstorm from './img/icons/thunderstorm.webp'
+import snow from './img/icons/snow.webp'
+import mist from './img/icons/mist.webp'
+import humi from './img/icons/humidity.webp'
+import temp from './img/icons/temp-day.webp'
+import wind from './img/icons/wind.webp'
+
+function imageManager (descr) {
+  switch (descr) {
+    case 'humi': return humi
+    case 'temp': return temp
+    case 'wind': return wind
+    case 'clear': return sun
+    case 'clouds': return broken
+    case 'rain' || 'drizzle': return rain
+    case 'thunderstorm': return thunderstorm
+    case 'snow': return snow
+    default: return mist
+  }
+}
+
+const morning = './morning.webp'
+const day = './day.webp'
+const evening = './evening.webp'
+const night = './night.webp'
+const morningColor = 'rgb(46, 23, 69, 0.4)'
+const dayColor = 'rgb(23, 45,79, 0.4)'
+const eveningColor = 'rgb(79, 28, 23, 0.4)'
+const nightColor = 'rgb(7, 25, 20, 0.4)'
+
+function styler (dt) {
+  const hour = unixToHours(dt)
+  let design = {}
+  let morningCard = '' // white has low readability
+  if (hour >= 22 || hour < 5) {
+    design.bg = night
+    design.color = nightColor
+  } else if (hour >= 6 && hour < 10) {
+    design.bg = morning
+    design.color = morningColor
+    morningCard = `#card-title { color: ${design.color}; }`
+  } else if (hour >= 10 && hour < 17) {
+    design.bg = day
+    design.color = dayColor
+  } else {
+    design.bg = evening
+    design.color = eveningColor
+  }
+  let style = document.createElement('style')
+  style.innerText = `
+  #container { background: url(${design.bg}); } 
+  .hour-color { background-color: ${design.color}; } 
+  ${morningCard}
+  ::-webkit-scrollbar-track { box-shadow: inset 1px 1px 5px ${design.color}; }
+  ::-webkit-scrollbar-thumb { background: ${design.color}; }
+  `
+  document.head.appendChild(style)
+}
+
 export {
   makeData,
   makeDataList,
   getDate,
-  unixToDateTime
+  unixToDateTime,
+  imageManager,
+  styler
 }

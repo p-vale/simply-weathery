@@ -4,6 +4,7 @@ import forecastCards from './forecast-cards'
 function forecast (data) {
   //title
   const title = document.createElement('p')
+  title.id = 'card-title'
   title.classList.add('upper')
   title.innerHTML = 'next<br><span class="bold big">5 days<span>'
 
