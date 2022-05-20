@@ -6,10 +6,6 @@
   gap : 15px;
 }
 
-#forecast-title {
-  text-transform: uppercase;
-}
-
 #card-box {
   height: 310px;
   display: flex;

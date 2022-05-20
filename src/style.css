@@ -13,20 +13,28 @@ html {
   scrollbar-width: none;
   color: white;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
-}
-
-h1 {
-  text-transform: uppercase;
-  text-align: center;
+  letter-spacing: 0.1em;
 }
 
 h2 {
-  /* text-transform: uppercase; */
-  text-align: center;
+  font-weight: 200;
 }
 
 h3 {
   font-weight: lighter;
+}
+
+.big {
+  font-size: 1.5em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.upper {
+  text-transform: uppercase;
+  text-align: center;
 }
 
 #container {

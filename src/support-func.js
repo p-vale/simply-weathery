@@ -55,7 +55,7 @@ function makeDataList (y) {
     let item = {
       'dt' : y[i].dt_txt,
       'temp' : Math.round(y[i].main.temp - 273.15),
-      'fore' : y[i].weather[0].main
+      'fore' : y[i].weather[0].description
     }
     arr.push(item)
   }

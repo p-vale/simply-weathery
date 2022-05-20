@@ -1,15 +1,13 @@
 function forecastCards (data) {
-  const dataList = data
-
   const cardBox = document.createElement('div')
   cardBox.id = 'card-box'
   cardBox.classList.add('rotate')
 
-  dataList.map((item) => {
+  data.map((item) => {
     let card = document.createElement('div')
     card.classList.add('card', 'rotate')
     let date = document.createElement('h3')
-    date.classList.add('card-date')
+    date.classList.add('upper')
     date.innerHTML = item.dt
 
     let img = document.createElement('img')
@@ -20,10 +18,9 @@ function forecastCards (data) {
     let temp = document.createElement('div')
     temp.classList.add('card-temp')
     let min =  document.createElement('p')
-    min.classList.add('temp-min')
     min.innerHTML = item.min
     let max =  document.createElement('p')
-    max.classList.add('temp-max')
+    max.classList.add('bold')
     max.innerHTML = item.max
     temp.appendChild(min)
     temp.appendChild(max)

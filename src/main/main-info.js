@@ -1,5 +1,4 @@
 function mainInfo (data) {
-
   //now
   let weatherNowImg = document.createElement('img')
   weatherNowImg.id = 'weatheNowImg'
