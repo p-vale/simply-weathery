@@ -4,7 +4,7 @@ function mainInfo (data) {
   //now
   let weatherNowImg = document.createElement('img')
   weatherNowImg.id = 'weatheNowImg'
-  weatherNowImg.src = imageManager(data.main)
+  weatherNowImg.src = imageManager(data.main, data.dt)
   let weatherNowTxt = document.createElement('h2')
   weatherNowTxt.classList.add('upper')
   weatherNowTxt.innerHTML = data.descr
@@ -19,7 +19,7 @@ function mainInfo (data) {
   temp.classList.add('weather-more')
   let tempImg = document.createElement('img')
   tempImg.classList.add('weather-more-img')
-  tempImg.src = imageManager('temp')
+  tempImg.src = imageManager('temp', data.dt)
   let tempTxt = document.createElement('p')
   tempTxt.innerHTML = `${data.temp}° C`
   temp.appendChild(tempImg)

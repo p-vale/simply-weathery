@@ -13,12 +13,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 3vh;
   border-radius:0 0 15px 15px;
-}
-
-#title {
-  margin-bottom: 30px;
 }
 
 #title-day-time {

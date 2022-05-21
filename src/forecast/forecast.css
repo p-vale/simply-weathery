@@ -3,7 +3,7 @@
   align-items: end;
   justify-content: center;
   padding-left: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
   gap : 15px;
 }
 
@@ -13,7 +13,7 @@
 }
 
 #card-box {
-  height: 310px;
+  height: 290px;
   display: flex;
   align-items: start;
   gap: 20px;
@@ -21,18 +21,18 @@
 }
 
 /* width */
-::-webkit-scrollbar {
+#card-box::-webkit-scrollbar {
   height: 10px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+#card-box::-webkit-scrollbar-track {
   box-shadow: inset 1px 1px 5px rgba(255, 255, 255);
   border-radius: 10px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+#card-box::-webkit-scrollbar-thumb {
   height: 8px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
@@ -43,7 +43,7 @@
   width: 175px;
   flex-shrink: 0;
   border-radius: 10px;
-  padding: 20px;
+  padding: 1vh;
   display: flex;
   flex-direction: column;
   gap: 20px;

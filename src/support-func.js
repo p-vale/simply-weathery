@@ -91,22 +91,27 @@ function unixToHours (unix) {
   return date.getHours()
 }
 
-import sun from './img/icons/clear sky.webp'
+import clear from './img/icons/clear.webp'
+import clearMoon from './img/icons/clear-moon.webp'
 import broken from './img/icons/broken clouds.webp'
 import rain from './img/icons/rain.webp'
 import thunderstorm from './img/icons/thunderstorm.webp'
 import snow from './img/icons/snow.webp'
 import mist from './img/icons/mist.webp'
 import humi from './img/icons/humidity.webp'
-import temp from './img/icons/temp-day.webp'
+import tempDay from './img/icons/temp-day.webp'
+import tempNight from './img/icons/temp-night.webp'
 import wind from './img/icons/wind.webp'
 
-function imageManager (descr) {
+function imageManager (descr, dt) {
+  const hour = unixToHours(dt)
   switch (descr) {
     case 'humi': return humi
-    case 'temp': return temp
+    case 'temp': if (hour >= 21 || hour < 8) return tempNight
+      return tempDay
     case 'wind': return wind
-    case 'clear': return sun
+    case 'clear':  if (hour >= 21 || hour < 8) return clearMoon
+      return clear
     case 'clouds': return broken
     case 'rain' || 'drizzle': return rain
     case 'thunderstorm': return thunderstorm
@@ -115,10 +120,10 @@ function imageManager (descr) {
   }
 }
 
-const morning = './morning.webp'
-const day = './day.webp'
-const evening = './evening.webp'
-const night = './night.webp'
+const morning = 'linear-gradient(0deg, rgba(201,192,215,1) 0%, rgba(249,223,222,1) 7%, rgba(249,235,236,1) 13%, rgba(213,225,237,1) 39%, rgba(167,194,223,1) 66%, rgba(91,144,191,1) 100%)'
+const day = 'linear-gradient(315deg, rgba(65,196,221,1) 0%, rgba(33,190,246,1) 50%, rgba(100,168,227,1) 100%)'
+const evening = 'linear-gradient(0deg, rgba(151,131,132,1) 0%, rgba(201,164,148,1) 6%, rgba(194,178,165,1) 15%, rgba(167,181,184,1) 29%, rgba(85,138,190,1) 61%, rgba(33,65,141,1) 100%)'
+const night = 'linear-gradient(0deg, rgba(120,139,145,1) 0%, rgba(55,133,145,1) 18%, rgba(48,78,85,1) 60%, rgba(52,50,49,1) 100%)'
 const morningColor = 'rgb(46, 23, 69, 0.4)'
 const dayColor = 'rgb(23, 45,79, 0.4)'
 const eveningColor = 'rgb(79, 28, 23, 0.4)'
@@ -144,13 +149,20 @@ function styler (dt) {
   }
   let style = document.createElement('style')
   style.innerText = `
-  #container { background: url(${design.bg}); } 
+  #container { background: #e9eef0; background: ${design.bg}; } 
   .hour-color { background-color: ${design.color}; } 
   ${morningCard}
-  ::-webkit-scrollbar-track { box-shadow: inset 1px 1px 5px ${design.color}; }
-  ::-webkit-scrollbar-thumb { background: ${design.color}; }
+  #card-box::-webkit-scrollbar-track { box-shadow: inset 1px 1px 5px ${design.color}; }
+  #card-box::-webkit-scrollbar-thumb { background: ${design.color}; }
   `
   document.head.appendChild(style)
+}
+
+function handleError(city) {
+  const answer = document.createElement('h1')
+  answer.id = 'answer-error'
+  answer.innerHTML = `"${city}" isn't in the database, try another city!`
+  return answer
 }
 
 export {
@@ -159,5 +171,6 @@ export {
   getDate,
   unixToDateTime,
   imageManager,
-  styler
+  styler,
+  handleError
 }

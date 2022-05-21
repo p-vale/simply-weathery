@@ -14,7 +14,6 @@ function main (data) {
   dayTime.innerHTML = `${data.name}, ${fullDate.weekday} UTC ${unixToDateTime(data.dt)}`
   
   const title = document.createElement('div')
-  title.id = 'title'
   title.appendChild(date)
   title.appendChild(dayTime)
 
