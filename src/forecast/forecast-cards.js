@@ -16,7 +16,6 @@ function forecastCards (data) {
     img.classList.add('card-img')
     img.src = imageManager(item.main)
     let weather = document.createElement('p')
-    // weather.classList.add('upper')
     weather.innerHTML = item.fore
 
     let temp = document.createElement('div')

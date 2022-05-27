@@ -1,6 +1,7 @@
 import './style.css'
 import component from './component'
-import searchIcon from './img/icons/search.webp'
+import mobileAlert from './mobileAlert'
+import searchIcon from './img/search.webp'
 
 const input = document.createElement('input')
 input.id = 'search-input'
@@ -19,8 +20,10 @@ searchBox.appendChild(searchImg)
 
 searchImg.addEventListener('click', () => {
   if (input.validity.valueMissing) {
-    input.setCustomValidity('please choose a city');
-    input.reportValidity();
+    const alert = document.createElement('p')
+    alert.id = 'alert'
+    alert.innerHTML = 'please choose a city'
+    document.body.appendChild(alert)
   } else {
     document.body.innerHTML = ''
     document.body.appendChild(component(input.value))
@@ -29,5 +32,10 @@ searchImg.addEventListener('click', () => {
   }
 })
 
-document.body.appendChild(component('berlin'))
-document.body.appendChild(searchBox)
+if (window.innerWidth <= 750) {
+  document.body.appendChild(mobileAlert())
+} else {
+  document.body.appendChild(component('berlin'))
+  document.body.appendChild(searchBox)
+}
+

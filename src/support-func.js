@@ -69,12 +69,12 @@ function makeDataList (y) {
 function getDate () {
   const date = new Date()
 
-  let day = date.getDay()
+  let dayNum = date.getDate()
   let month = months[date.getMonth()]
   let year = date.getFullYear()
   
   return {
-    "titleDate" : day + " " + month + " " + year,
+    "titleDate" : dayNum + " " + month + " " + year,
     "weekday" : weekday[date.getDay()]
   }
 }
@@ -83,6 +83,8 @@ function unixToDateTime (unix) {
   let date = new Date(unix * 1000)
   let hours = date.getHours()
   let minutes = "0" + date.getMinutes()
+  console.log(date.getMinutes())
+  console.log(minutes)
   return hours + ':' + minutes.slice(-2)
 }
 
@@ -91,17 +93,17 @@ function unixToHours (unix) {
   return date.getHours()
 }
 
-import clear from './img/icons/clear.webp'
-import clearMoon from './img/icons/clear-moon.webp'
-import broken from './img/icons/broken clouds.webp'
-import rain from './img/icons/rain.webp'
-import thunderstorm from './img/icons/thunderstorm.webp'
-import snow from './img/icons/snow.webp'
-import mist from './img/icons/mist.webp'
-import humi from './img/icons/humidity.webp'
-import tempDay from './img/icons/temp-day.webp'
-import tempNight from './img/icons/temp-night.webp'
-import wind from './img/icons/wind.webp'
+import clear from './img/clear.webp'
+import clearMoon from './img/clear-moon.webp'
+import broken from './img/broken clouds.webp'
+import rain from './img/rain.webp'
+import thunderstorm from './img/thunderstorm.webp'
+import snow from './img/snow.webp'
+import mist from './img/mist.webp'
+import humi from './img/humidity.webp'
+import tempDay from './img/temp-day.webp'
+import tempNight from './img/temp-night.webp'
+import wind from './img/wind.webp'
 
 function imageManager (descr, dt) {
   const hour = unixToHours(dt)

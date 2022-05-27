@@ -27,7 +27,7 @@
 }
 
 #weather-now {
-  max-width: 200px;
+  /* max-width: 200px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,12 +38,24 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 15px;
+  gap: 1vh;
   margin-top: 3px;
-  margin-bottom: 3px;;
+  margin-bottom: 3px;
 }
 
 .weather-more-img {
   height: 60px;
   width: 60px;
+}
+
+@media screen and (max-height: 580px) {
+  #weather-now-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .weather-more-img {
+    height: 50px;
+    width: 50px;
+  }
 }

@@ -3,7 +3,7 @@ import { imageManager } from '../support-func'
 function mainInfo (data) {
   //now
   let weatherNowImg = document.createElement('img')
-  weatherNowImg.id = 'weatheNowImg'
+  weatherNowImg.id = 'weather-now-img'
   weatherNowImg.src = imageManager(data.main, data.dt)
   let weatherNowTxt = document.createElement('h2')
   weatherNowTxt.classList.add('upper')
@@ -50,7 +50,7 @@ function mainInfo (data) {
   weatherMore.appendChild(humi)
   weatherMore.appendChild(wind)
 
-  //container
+  //box
   const info =  document.createElement('div')
   info.id = 'info'
   info.appendChild(weatherNow)

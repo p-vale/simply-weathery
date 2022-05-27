@@ -12,7 +12,6 @@ function component (city) {
     .then(function(response) {
       let x = JSON.parse(JSON.stringify(response))
       let data = makeData(x)
-      console.log(data)
 
       styler(data.dt)
       container.appendChild(main(data))
@@ -30,7 +29,6 @@ function component (city) {
       let y = JSON.parse(JSON.stringify(response))
       y = y.list
       let dataList = makeDataList(y)
-      console.log(dataList)
 
       container.appendChild(forecast(dataList))
     })
