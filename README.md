@@ -1,11 +1,10 @@
 # simply-weathery
 
 Desktop only visualization of current weather and forecast.
-Design based on UTC time.
+For mobile users there is a -*quite random*- alert and the app is unusable.
 
-Made with Current Weather free API.
-I'm aware the key is exposed.
+The design changes based only on UTC time beacuse I wasn't able to find neither an up-to-date library nor a free API to convert timezones. Making the calculations myself is defenetly out of this project scope.
 
-To do:
-- use enter key on input?
-- fix time
+The icons were derigned *ad hoc* for simply-weathery.
+
+Made with Current Weather free API by [OpenWeather](https://openweathermap.org/).

@@ -58,6 +58,7 @@ h2 {
 #search-image {
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 
 #search-input {
