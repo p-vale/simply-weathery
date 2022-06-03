@@ -154,6 +154,7 @@ function styler (dt) {
   #container { background: #e9eef0; background: ${design.bg}; } 
   .hour-color { background-color: ${design.color}; } 
   ${morningCard}
+  #card-box { scrollbar-color: ${design.color} rgb(255, 255, 255, 0);}
   #card-box::-webkit-scrollbar-track { box-shadow: inset 1px 1px 5px ${design.color}; }
   #card-box::-webkit-scrollbar-thumb { background: ${design.color}; }
   `
