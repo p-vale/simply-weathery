@@ -40,7 +40,7 @@
 
 .card {
   height: 200px;
-  width: 175px;
+  width: 220px;
   flex-shrink: 0;
   border-radius: 10px;
   padding: 1vh;
@@ -59,6 +59,10 @@
   max-width: 100px;
   height: auto;
   margin-bottom: -20px;
+}
+
+.card > p {
+  text-align: center;
 }
 
 .card-temp {

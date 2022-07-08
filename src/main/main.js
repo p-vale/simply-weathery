@@ -27,7 +27,7 @@ function main (data) {
   today.appendChild(title)
   today.appendChild(info)
 
-  //conatiner
+  //container
   const main = document.createElement('div')
   main.id = 'main'
   main.appendChild(today)
