@@ -1,6 +1,5 @@
 import './style.css'
 import component from './component'
-import mobileAlert from './mobileAlert'
 import searchIcon from './img/search.webp'
 
 const input = document.createElement('input')
@@ -32,10 +31,5 @@ searchImg.addEventListener('click', () => {
   }
 })
 
-if (window.innerWidth <= 750) {
-  document.body.appendChild(mobileAlert())
-} else {
-  document.body.appendChild(component('berlin'))
-  document.body.appendChild(searchBox)
-}
-
+document.body.appendChild(component('berlin'))
+document.body.appendChild(searchBox)

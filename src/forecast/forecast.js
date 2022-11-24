@@ -9,7 +9,7 @@ function forecast (data) {
   title.innerHTML = 'next<br><span class="bold big">5 days<span>'
 
   const titleCard = document.createElement('div')
-  titleCard.classList.add('card')
+  titleCard.classList.add('card', 'title-card')
   titleCard.appendChild(title)
 
   //cards

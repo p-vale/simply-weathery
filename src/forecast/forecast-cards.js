@@ -21,11 +21,9 @@ function forecastCards (data) {
     let temp = document.createElement('div')
     temp.classList.add('card-temp')
     let min = document.createElement('p')
-    min.innerHTML = `${item.min}°`
-    min.classList.add('big')
+    min.innerHTML = `min ${item.min}°`
     let max = document.createElement('p')
-    max.classList.add('bold', 'big')
-    max.innerHTML = `${item.max}°`
+    max.innerHTML = `max ${item.max}°`
     temp.appendChild(min)
     temp.appendChild(max)
 

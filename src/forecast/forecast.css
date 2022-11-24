@@ -71,3 +71,24 @@
   justify-content: space-around;
   align-items: baseline;
 }
+
+@media only screen and (max-width: 750px), (max-height: 560px) {
+  #forecast {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+  }
+
+  .title-card {
+    justify-content: end;
+  }
+
+  #card-box {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .rotate {
+    transform: rotateX(0deg); /* remove desktop rotation  */
+  }
+}

@@ -83,8 +83,6 @@ function unixToDateTime (unix) {
   let date = new Date(unix * 1000)
   let hours = date.getHours()
   let minutes = "0" + date.getMinutes()
-  console.log(date.getMinutes())
-  console.log(minutes)
   return hours + ':' + minutes.slice(-2)
 }
 

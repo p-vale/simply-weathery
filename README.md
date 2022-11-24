@@ -1,9 +1,8 @@
 # simply-weathery
 
-Desktop only visualization of current weather and forecast.
-For mobile users there is a -*quite random*- alert and the app is unusable.
+Visualization of current weather and forecast.
 
-The design changes based only on UTC time beacuse I wasn't able to find neither an up-to-date library nor a free API to convert timezones. Making the calculations myself is decidedly out of this project scope.
+The design changes based only on UTC time beacuse I wasn't able to find neither an up-to-date library nor a free API to convert timezones. Making the calculations myself is out of this project scope.
 
 The icons were derigned *ad hoc* for simply-weathery.
 
