@@ -31,5 +31,12 @@ searchImg.addEventListener('click', () => {
   }
 })
 
+input.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchImg.click();
+  }
+});
+
 document.body.appendChild(component('berlin'))
 document.body.appendChild(searchBox)
